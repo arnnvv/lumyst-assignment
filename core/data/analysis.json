@@ -1,861 +1,857 @@
 {
-	"metadata": {
-		"fileVersion": "1.0",
-		"lumystVersion": "0.2.2",
-		"exportedAt": "2025-10-04T07:01:22.215Z",
-		"workspaceFingerprint": "d5e5d10b6e11ade5734b2102556521d37f0589721247c9a77da265383852f510",
-		"fingerprintFile": "pyproject.toml"
-	},
-	"analysisData": {
-		"graphNodes": [
-
-		],
-		"graphEdges": [
-			
-		],
-		"c1Output": [
-			{
-				"id": "c1_category_process_1_1759561025059_1",
-				"label": "Application Core & Request Lifecycle",
-				"c1Category": "Application Core & Request Lifecycle",
-				"nodesInCategory": 36
-			},
-			{
-				"id": "c1_category_process_1_1759561025059_2",
-				"label": "API Endpoints & HTTP Methods",
-				"c1Category": "API Endpoints & HTTP Methods",
-				"nodesInCategory": 16
-			},
-			{
-				"id": "c1_category_process_1_1759561025059_3",
-				"label": "OpenAPI & Documentation Generation",
-				"c1Category": "OpenAPI & Documentation Generation",
-				"nodesInCategory": 18
-			},
-			{
-				"id": "c1_category_process_1_1759561025059_5",
-				"label": "Security & Exception Management",
-				"c1Category": "Security & Exception Management",
-				"nodesInCategory": 7
-			}
-		],
-		"c2Subcategories": [
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_1_1",
-				"c1CategoryId": "c1_category_process_1_1759561025059_1",
-				"label": "Application Core and Lifecycle",
-				"c2Name": "Application Core and Lifecycle",
-				"description": "Encompasses the main FastAPI application class, its constructor, and the ASGI interface for handling incoming requests and managing application lifecycle events.",
-				"purpose": "To provide the foundational structure, configuration, and request processing entry point for the FastAPI application.",
-				"nodeCount": 3
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_1_2",
-				"c1CategoryId": "c1_category_process_1_1759561025059_1",
-				"label": "API Routing and Structure",
-				"c2Name": "API Routing and Structure",
-				"description": "Methods for defining HTTP and WebSocket routes, and for integrating modular API routers to build the application's endpoint structure.",
-				"purpose": "To map URL paths to specific handler functions and enable a structured, modular approach to API design.",
-				"nodeCount": 3
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_1_3",
-				"c1CategoryId": "c1_category_process_1_1759561025059_1",
-				"label": "Middleware Management",
-				"c2Name": "Middleware Management",
-				"description": "Functionality for registering and applying middleware to intercept and process requests/responses globally.",
-				"purpose": "To implement cross-cutting concerns like logging, authentication, and request/response modification.",
-				"nodeCount": 2
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_1_4",
-				"c1CategoryId": "c1_category_process_1_1759561025059_1",
-				"label": "OpenAPI Documentation System",
-				"c2Name": "OpenAPI Documentation System",
-				"description": "Components responsible for generating the OpenAPI specification (Swagger/OAS) and supporting interactive API documentation UIs.",
-				"purpose": "To automatically provide comprehensive, machine-readable, and interactive documentation for the API.",
-				"nodeCount": 3
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_1_5",
-				"c1CategoryId": "c1_category_process_1_1759561025059_1",
-				"label": "Request Parameter and Dependency System",
-				"c2Name": "Request Parameter and Dependency System",
-				"description": "A comprehensive system for defining, validating, and injecting various types of request parameters (query, path, header, cookie, body, file, form data) and managing dependencies. This includes parameter factories, their underlying classes, and OAuth2 form handling.",
-				"purpose": "To abstract and standardize the extraction, validation, and transformation of incoming request data into usable Python objects for endpoint functions, and to manage reusable dependencies.",
-				"nodeCount": 21
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_1_6",
-				"c1CategoryId": "c1_category_process_1_1759561025059_1",
-				"label": "Response and Exception Handling Utilities",
-				"c2Name": "Response and Exception Handling Utilities",
-				"description": "Provides specialized response classes for high-performance or alternative JSON serialization and the core logic for handling exceptions within the application.",
-				"purpose": "To offer flexible and optimized options for formatting and sending API responses and to gracefully manage errors.",
-				"nodeCount": 4
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_2_1",
-				"c1CategoryId": "c1_category_process_1_1759561025059_2",
-				"label": "HTTP Endpoint Definitions",
-				"c2Name": "HTTP Endpoint Definitions",
-				"description": "This subcategory encompasses the core decorators for defining HTTP GET, HEAD, and DELETE endpoints, along with the underlying generic route registration logic. It forms the public interface for standard HTTP API operations.",
-				"purpose": "To expose API functionality via standard HTTP methods and manage their registration within the application's routing system.",
-				"nodeCount": 5
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_2_2",
-				"c1CategoryId": "c1_category_process_1_1759561025059_2",
-				"label": "WebSocket Endpoint Handling",
-				"c2Name": "WebSocket Endpoint Handling",
-				"description": "This subcategory includes the decorators and internal functions specifically designed for defining and registering WebSocket communication endpoints.",
-				"purpose": "To enable real-time, bidirectional communication by providing dedicated routing capabilities for WebSocket connections.",
-				"nodeCount": 2
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_2_3",
-				"c1CategoryId": "c1_category_process_1_1759561025059_2",
-				"label": "API Parameter & Dependency Management",
-				"c2Name": "API Parameter & Dependency Management",
-				"description": "This subcategory groups classes for defining various request parameters (e.g., Query, Cookie, File) and the mechanisms for dependency injection and security, including the base 'Param' class and 'Depends'.",
-				"purpose": "To provide structured parameter validation, enable modular and testable code through dependency injection, and enforce security policies.",
-				"nodeCount": 7
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_2_4",
-				"c1CategoryId": "c1_category_process_1_1759561025059_2",
-				"label": "API Metadata & Response Utilities",
-				"c2Name": "API Metadata & Response Utilities",
-				"description": "This subcategory contains functionality for generating the OpenAPI schema (API documentation) and utility methods for rendering various types of API responses.",
-				"purpose": "To automate API documentation for external consumption and to handle the final stage of response preparation and serialization.",
-				"nodeCount": 2
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_3_1",
-				"c1CategoryId": "c1_category_process_1_1759561025059_3",
-				"label": "API Endpoint Definition",
-				"c2Name": "API Endpoint Definition",
-				"description": "Core methods for declaring HTTP and WebSocket endpoints, including their paths, response models, and OpenAPI metadata.",
-				"purpose": "To expose application functionality through well-defined API interfaces.",
-				"nodeCount": 3
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_3_2",
-				"c1CategoryId": "c1_category_process_1_1759561025059_3",
-				"label": "OpenAPI Schema Generation",
-				"c2Name": "OpenAPI Schema Generation",
-				"description": "Functions dedicated to constructing specific parts of the OpenAPI specification, such as request body schemas and security definitions.",
-				"purpose": "To programmatically build the OpenAPI documentation for the API.",
-				"nodeCount": 2
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_3_3",
-				"c1CategoryId": "c1_category_process_1_1759561025059_3",
-				"label": "Application Routing and Lifecycle",
-				"c2Name": "Application Routing and Lifecycle",
-				"description": "Manages the integration of sub-routers, registration of global exception handlers, and handling of application startup/shutdown events.",
-				"purpose": "To configure the overall routing structure and lifecycle behavior of the FastAPI application.",
-				"nodeCount": 3
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_3_4",
-				"c1CategoryId": "c1_category_process_1_1759561025059_3",
-				"label": "Data Serialization and Transformation",
-				"c2Name": "Data Serialization and Transformation",
-				"description": "Provides utilities for converting data types (e.g., Decimal to int/float) and for serializing/validating API responses according to defined models.",
-				"purpose": "To ensure data is correctly formatted and validated when exchanged with clients or processed internally.",
-				"nodeCount": 3
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_3_5",
-				"c1CategoryId": "c1_category_process_1_1759561025059_3",
-				"label": "API Error and Exception Handling",
-				"c2Name": "API Error and Exception Handling",
-				"description": "Contains logic for handling various API-specific exceptions (HTTP, WebSocket), determining appropriate response bodies, and managing error reporting.",
-				"purpose": "To provide robust and consistent error feedback to API consumers.",
-				"nodeCount": 5
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_5_1",
-				"c1CategoryId": "c1_category_process_1_1759561025059_5",
-				"label": "API Endpoint Configuration",
-				"c2Name": "API Endpoint Configuration",
-				"description": "Provides methods for developers to define and configure API endpoints, including specifying response models, status codes, and handling various response scenarios. This category sets the stage for how the API will behave and respond.",
-				"purpose": "To enable the declarative definition of web API routes and their metadata.",
-				"nodeCount": 3
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_5_2",
-				"c1CategoryId": "c1_category_process_1_1759561025059_5",
-				"label": "Core Route Registration",
-				"c2Name": "Core Route Registration",
-				"description": "Manages the internal process of registering defined API routes within the application's routing mechanism. It acts as the bridge between the high-level endpoint definitions and the underlying routing system.",
-				"purpose": "To integrate API endpoint definitions into the application's request dispatching system.",
-				"nodeCount": 1
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_5_3",
-				"c1CategoryId": "c1_category_process_1_1759561025059_5",
-				"label": "Global Exception Middleware Setup",
-				"c2Name": "Global Exception Middleware Setup",
-				"description": "Responsible for building and configuring the application's middleware stack, specifically focusing on setting up global error and exception handling mechanisms that catch unhandled exceptions and server errors.",
-				"purpose": "To ensure robust, centralized error management and consistent error responses across the entire application.",
-				"nodeCount": 1
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_5_4",
-				"c1CategoryId": "c1_category_process_1_1759561025059_5",
-				"label": "Request Handler Orchestration",
-				"c2Name": "Request Handler Orchestration",
-				"description": "Acts as a factory to create and configure the specific request handler for each API route, passing in route-specific parameters and integrating core processing logic.",
-				"purpose": "To prepare and customize the request processing pipeline for individual API endpoints.",
-				"nodeCount": 1
-			},
-			{
-				"id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_5_5",
-				"c1CategoryId": "c1_category_process_1_1759561025059_5",
-				"label": "Endpoint Request and Error Processing",
-				"c2Name": "Endpoint Request and Error Processing",
-				"description": "Contains the core logic for processing an incoming request for a specific endpoint, including parsing request bodies, resolving dependencies, executing the endpoint function, and handling immediate, localized validation and HTTP-specific errors. This is where many exceptions related to request data or HTTP status are first identified.",
-				"purpose": "To execute the business logic of an endpoint and manage request-specific errors and responses.",
-				"nodeCount": 1
-			}
-		],
-		"c2Relationships": [
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_1",
-				"c1CategoryId": "c1_category_process_1_1759561025059_1",
-				"fromC2": "Application Core and Lifecycle",
-				"toC2": "API Routing and Structure",
-				"relationshipType": "configures",
-				"description": "The core FastAPI application configures and manages the routing system by adding routes and including sub-routers.",
-				"nodeConnections": 3
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_2",
-				"c1CategoryId": "c1_category_process_1_1759561025059_1",
-				"fromC2": "Application Core and Lifecycle",
-				"toC2": "Middleware Management",
-				"relationshipType": "integrates",
-				"description": "The FastAPI core integrates middleware functionality, allowing global request/response processing.",
-				"nodeConnections": 2
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_3",
-				"c1CategoryId": "c1_category_process_1_1759561025059_1",
-				"fromC2": "Application Core and Lifecycle",
-				"toC2": "Response and Exception Handling Utilities",
-				"relationshipType": "delegates to",
-				"description": "The core application delegates exception handling to registered handlers.",
-				"nodeConnections": 1
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_4",
-				"c1CategoryId": "c1_category_process_1_1759561025059_1",
-				"fromC2": "Application Core and Lifecycle",
-				"toC2": "OpenAPI Documentation System",
-				"relationshipType": "generates",
-				"description": "The FastAPI application triggers the generation and serving of OpenAPI documentation.",
-				"nodeConnections": 1
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_5",
-				"c1CategoryId": "c1_category_process_1_1759561025059_1",
-				"fromC2": "API Routing and Structure",
-				"toC2": "Request Parameter and Dependency System",
-				"relationshipType": "utilizes",
-				"description": "API routes utilize the parameter and dependency system to define and validate endpoint inputs.",
-				"nodeConnections": 21
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_6",
-				"c1CategoryId": "c1_category_process_1_1759561025059_1",
-				"fromC2": "API Routing and Structure",
-				"toC2": "Response and Exception Handling Utilities",
-				"relationshipType": "produces",
-				"description": "API routes produce responses and can trigger exceptions handled by the response and exception utilities.",
-				"nodeConnections": 2
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_7",
-				"c1CategoryId": "c1_category_process_1_1759561025059_1",
-				"fromC2": "OpenAPI Documentation System",
-				"toC2": "Request Parameter and Dependency System",
-				"relationshipType": "inspects",
-				"description": "The OpenAPI documentation system inspects parameter and dependency definitions to generate API schema.",
-				"nodeConnections": 2
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_8",
-				"c1CategoryId": "c1_category_process_1_1759561025059_1",
-				"fromC2": "Request Parameter and Dependency System",
-				"toC2": "Application Core and Lifecycle",
-				"relationshipType": "integrates with",
-				"description": "Global dependencies defined in the parameter system are integrated into the application core.",
-				"nodeConnections": 2
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_9",
-				"c1CategoryId": "c1_category_process_1_1759561025059_1",
-				"fromC2": "Custom Response Utilities",
-				"toC2": "Application Core and Lifecycle",
-				"relationshipType": "provides to",
-				"description": "Custom response classes are provided to the application core for use as default response types.",
-				"nodeConnections": 2
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_2_1",
-				"c1CategoryId": "c1_category_process_1_1759561025059_2",
-				"fromC2": "HTTP Endpoint Definitions",
-				"toC2": "HTTP Endpoint Definitions",
-				"relationshipType": "orchestrates",
-				"description": "Specific HTTP method decorators (e.g., 'get') internally call more generic route registration methods to add the path operation to the router.",
-				"nodeConnections": 1
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_2_2",
-				"c1CategoryId": "c1_category_process_1_1759561025059_2",
-				"fromC2": "WebSocket Endpoint Handling",
-				"toC2": "WebSocket Endpoint Handling",
-				"relationshipType": "orchestrates",
-				"description": "The public 'websocket_route' decorator utilizes an internal decorator function to encapsulate the logic for adding the WebSocket route.",
-				"nodeConnections": 1
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_2_3",
-				"c1CategoryId": "c1_category_process_1_1759561025059_2",
-				"fromC2": "API Parameter & Dependency Management",
-				"toC2": "API Parameter & Dependency Management",
-				"relationshipType": "extends",
-				"description": "Specific parameter types ('Cookie', 'Query') inherit from the base 'Param' class, and the 'Security' dependency mechanism extends the base 'Depends' functionality.",
-				"nodeConnections": 4
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_2_4",
-				"c1CategoryId": "c1_category_process_1_1759561025059_2",
-				"fromC2": "HTTP Endpoint Definitions",
-				"toC2": "API Parameter & Dependency Management",
-				"relationshipType": "uses",
-				"description": "HTTP endpoint decorators are designed to accept and process parameters and dependencies defined by the API Parameter & Dependency Management components, although direct calls are not shown in these specific snippets.",
-				"nodeConnections": 0
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_2_5",
-				"c1CategoryId": "c1_category_process_1_1759561025059_2",
-				"fromC2": "HTTP Endpoint Definitions",
-				"toC2": "API Metadata & Response Utilities",
-				"relationshipType": "contributes to",
-				"description": "The definitions of HTTP endpoints provide the essential information required for generating the OpenAPI schema and implicitly rely on response rendering utilities for output formatting.",
-				"nodeConnections": 0
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_2_6",
-				"c1CategoryId": "c1_category_process_1_1759561025059_2",
-				"fromC2": "API Parameter & Dependency Management",
-				"toC2": "API Metadata & Response Utilities",
-				"relationshipType": "informs",
-				"description": "Details from parameter definitions and dependency structures are crucial for enriching the OpenAPI schema with accurate and comprehensive documentation.",
-				"nodeConnections": 0
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_3_1",
-				"c1CategoryId": "c1_category_process_1_1759561025059_3",
-				"fromC2": "API Endpoint Definition",
-				"toC2": "Application Routing and Lifecycle",
-				"relationshipType": "registers endpoints with",
-				"description": "Endpoint definition methods (delete, head, websocket_route) register their routes with the underlying routing system, which is managed by the Application Routing and Lifecycle category.",
-				"nodeConnections": 3
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_3_2",
-				"c1CategoryId": "c1_category_process_1_1759561025059_3",
-				"fromC2": "API Endpoint Definition",
-				"toC2": "OpenAPI Schema Generation",
-				"relationshipType": "contributes schema metadata to",
-				"description": "Parameters provided to endpoint decorators (e.g., response_model, tags, summary, description, openapi_extra) are directly consumed by the OpenAPI schema generation process.",
-				"nodeConnections": 2
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_3_3",
-				"c1CategoryId": "c1_category_process_1_1759561025059_3",
-				"fromC2": "API Endpoint Definition",
-				"toC2": "Data Serialization and Transformation",
-				"relationshipType": "requires response serialization from",
-				"description": "Endpoint definitions specify response_model and related serialization options, indicating that responses will be processed by data serialization functions.",
-				"nodeConnections": 2
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_3_4",
-				"c1CategoryId": "c1_category_process_1_1759561025059_3",
-				"fromC2": "Application Routing and Lifecycle",
-				"toC2": "API Error and Exception Handling",
-				"relationshipType": "registers exception handlers for",
-				"description": "The exception_handler method directly registers functions to handle exceptions, which are part of the API Error and Exception Handling category.",
-				"nodeConnections": 2
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_3_5",
-				"c1CategoryId": "c1_category_process_1_1759561025059_3",
-				"fromC2": "Data Serialization and Transformation",
-				"toC2": "OpenAPI Schema Generation",
-				"relationshipType": "provides encoding utilities to",
-				"description": "Functions like jsonable_encoder (implied by serialize_response and decimal_encoder context) are used by OpenAPI schema generation to encode examples and security definitions.",
-				"nodeConnections": 2
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_3_6",
-				"c1CategoryId": "c1_category_process_1_1759561025059_3",
-				"fromC2": "API Error and Exception Handling",
-				"toC2": "Data Serialization and Transformation",
-				"relationshipType": "serializes error responses with",
-				"description": "The http_exception_handler formats error responses, which involves serialization using utilities from the Data Serialization and Transformation category.",
-				"nodeConnections": 1
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_3_7",
-				"c1CategoryId": "c1_category_process_1_1759561025059_3",
-				"fromC2": "API Error and Exception Handling",
-				"toC2": "Application Routing and Lifecycle",
-				"relationshipType": "provides error utilities to",
-				"description": "Utility functions like is_body_allowed_for_status_code are used within exception handlers, which are registered by the routing/lifecycle system.",
-				"nodeConnections": 1
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_5_1",
-				"c1CategoryId": "c1_category_process_1_1759561025059_5",
-				"fromC2": "API Endpoint Configuration",
-				"toC2": "Core Route Registration",
-				"relationshipType": "calls",
-				"description": "High-level endpoint definition methods invoke the core router implementation to register the route.",
-				"nodeConnections": 1
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_5_2",
-				"c1CategoryId": "c1_category_process_1_1759561025059_5",
-				"fromC2": "Request Handler Orchestration",
-				"toC2": "Endpoint Request and Error Processing",
-				"relationshipType": "calls",
-				"description": "The route handler factory delegates to the core request processing function to handle the actual request logic.",
-				"nodeConnections": 1
-			},
-			{
-				"id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_5_3",
-				"c1CategoryId": "c1_category_process_1_1759561025059_5",
-				"fromC2": "Endpoint Request and Error Processing",
-				"toC2": "Global Exception Middleware Setup",
-				"relationshipType": "triggers",
-				"description": "Exceptions originating from endpoint-specific request processing are propagated and handled by the globally configured exception middleware.",
-				"nodeConnections": 1
-			}
-		],
-		"crossC1C2Relationships": [
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_0",
-				"fromC1": "Application Core & Request Lifecycle",
-				"fromC2": "Application Core and Lifecycle",
-				"fromNodeId": "code:fastapi/applications.py:FastAPI:50",
-				"toC1": "Security & Exception Management",
-				"toC2": "Global Exception Middleware Setup",
-				"toNodeId": "code:fastapi/applications.py:build_middleware_stack:995",
-				"relationshipType": "depends on",
-				"description": "The FastAPI application core class internally contains and utilizes the build_middleware_stack method to construct the ASGI middleware stack, which is crucial for request processing and error handling."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_1",
-				"fromC1": "Application Core & Request Lifecycle",
-				"fromC2": "Application Core and Lifecycle",
-				"fromNodeId": "code:fastapi/applications.py:FastAPI:50",
-				"toC1": "OpenAPI & Documentation Generation",
-				"toC2": "API Endpoint Definition",
-				"toNodeId": "code:fastapi/applications.py:delete:2667",
-				"relationshipType": "depends on",
-				"description": "The FastAPI application core class provides the delete method, which is used to define HTTP DELETE endpoints, contributing to the API's routing and documentation generation."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_10",
-				"fromC1": "OpenAPI & Documentation Generation",
-				"fromC2": "API Endpoint Definition",
-				"fromNodeId": "code:fastapi/applications.py:delete:2667",
-				"toC1": "API Endpoints & HTTP Methods",
-				"toC2": "HTTP Endpoint Definitions",
-				"toNodeId": "code:fastapi/routing.py:delete:2582",
-				"relationshipType": "calls",
-				"description": "The delete method within the FastAPI class delegates the actual route registration for HTTP DELETE operations to the underlying router's delete method."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_11",
-				"fromC1": "OpenAPI & Documentation Generation",
-				"fromC2": "Application Routing and Lifecycle",
-				"fromNodeId": "code:fastapi/applications.py:exception_handler:4621",
-				"toC1": "Application Core & Request Lifecycle",
-				"toC2": "Response and Exception Handling Utilities",
-				"toNodeId": "code:fastapi/applications.py:decorator:4662",
-				"relationshipType": "depends on",
-				"description": "The exception_handler method in FastAPI defines a decorator function that encapsulates the logic for adding custom exception handlers to the application's core."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_12",
-				"fromC1": "API Endpoints & HTTP Methods",
-				"fromC2": "HTTP Endpoint Definitions",
-				"fromNodeId": "code:fastapi/applications.py:head:3413",
-				"toC1": "OpenAPI & Documentation Generation",
-				"toC2": "API Endpoint Definition",
-				"toNodeId": "code:fastapi/routing.py:head:3336",
-				"relationshipType": "calls",
-				"description": "The head method within the FastAPI class delegates the actual route registration for HTTP HEAD operations to the underlying router's head method."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_13",
-				"fromC1": "Application Core & Request Lifecycle",
-				"fromC2": "API Routing and Structure",
-				"fromNodeId": "code:fastapi/applications.py:include_router:1333",
-				"toC1": "OpenAPI & Documentation Generation",
-				"toC2": "Application Routing and Lifecycle",
-				"toNodeId": "code:fastapi/routing.py:include_router:1197",
-				"relationshipType": "calls",
-				"description": "The include_router method in the main FastAPI application delegates the responsibility of integrating another API router to its internal routing component."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_14",
-				"fromC1": "API Endpoints & HTTP Methods",
-				"fromC2": "API Metadata & Response Utilities",
-				"fromNodeId": "code:fastapi/applications.py:openapi:1043",
-				"toC1": "Application Core & Request Lifecycle",
-				"toC2": "OpenAPI Documentation System",
-				"toNodeId": "code:fastapi/openapi/utils.py:get_openapi:475",
-				"relationshipType": "calls",
-				"description": "The openapi method, responsible for generating the OpenAPI schema, invokes the get_openapi utility function to perform the actual schema generation logic."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_15",
-				"fromC1": "Application Core & Request Lifecycle",
-				"fromC2": "OpenAPI Documentation System",
-				"fromNodeId": "code:fastapi/applications.py:openapi:1081",
-				"toC1": "API Endpoints & HTTP Methods",
-				"toC2": "API Metadata & Response Utilities",
-				"toNodeId": "code:fastapi/applications.py:openapi:1043",
-				"relationshipType": "calls",
-				"description": "The asynchronous openapi route handler function calls the FastAPI instance's openapi method to retrieve the generated OpenAPI schema for serving."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_16",
-				"fromC1": "Data Handling & Validation",
-				"fromC2": "API Error Response Generation",
-				"fromNodeId": "code:fastapi/exception_handlers.py:request_validation_exception_handler:19",
-				"toC1": "OpenAPI & Documentation Generation",
-				"toC2": "API Error and Exception Handling",
-				"toNodeId": "code:fastapi/exceptions.py:errors:152",
-				"relationshipType": "calls",
-				"description": "The request_validation_exception_handler function retrieves detailed error messages by calling the errors method on the validation exception object to construct a JSON response."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_17",
-				"fromC1": "Data Handling & Validation",
-				"fromC2": "API Error Response Generation",
-				"fromNodeId": "code:fastapi/exception_handlers.py:websocket_request_validation_exception_handler:28",
-				"toC1": "OpenAPI & Documentation Generation",
-				"toC2": "API Error and Exception Handling",
-				"toNodeId": "code:fastapi/exceptions.py:errors:152",
-				"relationshipType": "calls",
-				"description": "The websocket_request_validation_exception_handler uses the errors method of the validation exception to provide a reason for closing the WebSocket connection due to validation failure."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_18",
-				"fromC1": "Data Handling & Validation",
-				"fromC2": "Core Validation Exceptions",
-				"fromNodeId": "code:fastapi/exceptions.py:ValidationException:148",
-				"toC1": "OpenAPI & Documentation Generation",
-				"toC2": "API Error and Exception Handling",
-				"toNodeId": "code:fastapi/exceptions.py:errors:152",
-				"relationshipType": "depends on",
-				"description": "The ValidationException class, part of data handling, contains an errors method to expose the list of validation issues, which is then used by error handling components."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_19",
-				"fromC1": "Application Core & Request Lifecycle",
-				"fromC2": "OpenAPI Documentation System",
-				"fromNodeId": "code:fastapi/openapi/utils.py:get_openapi:475",
-				"toC1": "Data Handling & Validation",
-				"toC2": "JSON Serialization Utilities",
-				"toNodeId": "code:fastapi/encoders.py:jsonable_encoder:101",
-				"relationshipType": "calls",
-				"description": "The get_openapi function, responsible for generating OpenAPI schema, utilizes jsonable_encoder to serialize various data structures into JSON-compatible formats for the schema."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_2",
-				"fromC1": "Application Core & Request Lifecycle",
-				"fromC2": "Application Core and Lifecycle",
-				"fromNodeId": "code:fastapi/applications.py:FastAPI:50",
-				"toC1": "OpenAPI & Documentation Generation",
-				"toC2": "Application Routing and Lifecycle",
-				"toNodeId": "code:fastapi/applications.py:exception_handler:4621",
-				"relationshipType": "depends on",
-				"description": "The FastAPI application core class includes the exception_handler method, allowing the application to register custom exception handling logic, which is vital for robust error management."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_20",
-				"fromC1": "OpenAPI & Documentation Generation",
-				"fromC2": "OpenAPI Schema Generation",
-				"fromNodeId": "code:fastapi/openapi/utils.py:get_openapi_operation_request_body:168",
-				"toC1": "Data Handling & Validation",
-				"toC2": "JSON Serialization Utilities",
-				"toNodeId": "code:fastapi/encoders.py:jsonable_encoder:101",
-				"relationshipType": "calls",
-				"description": "The get_openapi_operation_request_body function uses jsonable_encoder to serialize example data for request bodies into a JSON-compatible format for OpenAPI documentation."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_21",
-				"fromC1": "OpenAPI & Documentation Generation",
-				"fromC2": "OpenAPI Schema Generation",
-				"fromNodeId": "code:fastapi/openapi/utils.py:get_openapi_operation_request_body:168",
-				"toC1": "Data Handling & Validation",
-				"toC2": "JSON Serialization Utilities",
-				"toNodeId": "code:fastapi/encoders.py:jsonable_encoder:101",
-				"relationshipType": "calls",
-				"description": "The get_openapi_operation_request_body function uses jsonable_encoder to serialize example data for request bodies into a JSON-compatible format for OpenAPI documentation."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_22",
-				"fromC1": "OpenAPI & Documentation Generation",
-				"fromC2": "OpenAPI Schema Generation",
-				"fromNodeId": "code:fastapi/openapi/utils.py:get_openapi_security_definitions:76",
-				"toC1": "Data Handling & Validation",
-				"toC2": "JSON Serialization Utilities",
-				"toNodeId": "code:fastapi/encoders.py:jsonable_encoder:101",
-				"relationshipType": "calls",
-				"description": "The get_openapi_security_definitions function relies on jsonable_encoder to serialize security scheme models into a JSON-compatible format for OpenAPI security definitions."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_23",
-				"fromC1": "API Endpoints & HTTP Methods",
-				"fromC2": "API Parameter & Dependency Management",
-				"fromNodeId": "code:fastapi/params.py:Cookie:394",
-				"toC1": "Application Core & Request Lifecycle",
-				"toC2": "Request Parameter and Dependency System",
-				"toNodeId": "code:fastapi/params.py:__init__:397",
-				"relationshipType": "depends on",
-				"description": "The Cookie parameter class defines its initialization logic within its __init__ method, which configures how cookie parameters are handled in API requests."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_24",
-				"fromC1": "API Endpoints & HTTP Methods",
-				"fromC2": "API Parameter & Dependency Management",
-				"fromNodeId": "code:fastapi/params.py:Depends:763",
-				"toC1": "Application Core & Request Lifecycle",
-				"toC2": "Request Parameter and Dependency System",
-				"toNodeId": "code:fastapi/params.py:__repr__:770",
-				"relationshipType": "depends on",
-				"description": "The Depends class, used for dependency injection, includes a __repr__ method for generating a string representation, aiding in debugging and logging within the application core."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_25",
-				"fromC1": "API Endpoints & HTTP Methods",
-				"fromC2": "API Parameter & Dependency Management",
-				"fromNodeId": "code:fastapi/params.py:File:679",
-				"toC1": "Application Core & Request Lifecycle",
-				"toC2": "Request Parameter and Dependency System",
-				"toNodeId": "code:fastapi/params.py:__init__:680",
-				"relationshipType": "depends on",
-				"description": "The File parameter class defines its initialization logic within its __init__ method, which configures how file uploads are handled in API requests."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_26",
-				"fromC1": "API Endpoints & HTTP Methods",
-				"fromC2": "API Parameter & Dependency Management",
-				"fromNodeId": "code:fastapi/params.py:File:679",
-				"toC1": "Application Core & Request Lifecycle",
-				"toC2": "Request Parameter and Dependency System",
-				"toNodeId": "code:fastapi/params.py:Form:595",
-				"relationshipType": "extends",
-				"description": "The File parameter class extends the Form class, inheriting its base functionality for handling form data and specializing it for file uploads within the request parameter system."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_27",
-				"fromC1": "Application Core & Request Lifecycle",
-				"fromC2": "Request Parameter and Dependency System",
-				"fromNodeId": "code:fastapi/params.py:Header:308",
-				"toC1": "API Endpoints & HTTP Methods",
-				"toC2": "API Parameter & Dependency Management",
-				"toNodeId": "code:fastapi/params.py:Param:24",
-				"relationshipType": "extends",
-				"description": "The Header parameter class extends the Param class, inheriting core parameter definition capabilities and adding specific logic for handling HTTP header parameters."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_28",
-				"fromC1": "API Endpoints & HTTP Methods",
-				"fromC2": "API Parameter & Dependency Management",
-				"fromNodeId": "code:fastapi/params.py:Param:24",
-				"toC1": "Application Core & Request Lifecycle",
-				"toC2": "Request Parameter and Dependency System",
-				"toNodeId": "code:fastapi/params.py:__repr__:134",
-				"relationshipType": "depends on",
-				"description": "The base Param class, fundamental for API parameter management, includes a __repr__ method for debugging and clear string representation of parameter instances."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_29",
-				"fromC1": "Application Core & Request Lifecycle",
-				"fromC2": "Request Parameter and Dependency System",
-				"fromNodeId": "code:fastapi/params.py:Security:776",
-				"toC1": "API Endpoints & HTTP Methods",
-				"toC2": "API Parameter & Dependency Management",
-				"toNodeId": "code:fastapi/params.py:__init__:777",
-				"relationshipType": "depends on",
-				"description": "The Security dependency class defines its initialization logic within its __init__ method, which configures how security dependencies are managed and applied to API endpoints."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_3",
-				"fromC1": "Application Core & Request Lifecycle",
-				"fromC2": "Application Core and Lifecycle",
-				"fromNodeId": "code:fastapi/applications.py:FastAPI:50",
-				"toC1": "API Endpoints & HTTP Methods",
-				"toC2": "HTTP Endpoint Definitions",
-				"toNodeId": "code:fastapi/applications.py:get:1538",
-				"relationshipType": "depends on",
-				"description": "The FastAPI application core class exposes the get method, enabling developers to define HTTP GET endpoints, which are fundamental for retrieving resources in the API."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_30",
-				"fromC1": "Application Core & Request Lifecycle",
-				"fromC2": "Request Parameter and Dependency System",
-				"fromNodeId": "code:fastapi/params.py:Security:776",
-				"toC1": "API Endpoints & HTTP Methods",
-				"toC2": "API Parameter & Dependency Management",
-				"toNodeId": "code:fastapi/params.py:Depends:763",
-				"relationshipType": "extends",
-				"description": "The Security class extends the Depends class, building upon the core dependency injection mechanism to provide specialized functionality for handling security-related dependencies."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_31",
-				"fromC1": "Application Core & Request Lifecycle",
-				"fromC2": "Response and Exception Handling Utilities",
-				"fromNodeId": "code:fastapi/responses.py:UJSONResponse:22",
-				"toC1": "API Endpoints & HTTP Methods",
-				"toC2": "API Metadata & Response Utilities",
-				"toNodeId": "code:fastapi/responses.py:render:30",
-				"relationshipType": "depends on",
-				"description": "The UJSONResponse class, a specialized response utility, contains the render method responsible for serializing content into JSON format using the ujson library."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_32",
-				"fromC1": "Security & Exception Management",
-				"fromC2": "Endpoint Request and Error Processing",
-				"fromNodeId": "code:fastapi/routing.py:get_request_handler:292",
-				"toC1": "Data Handling & Validation",
-				"toC2": "Endpoint Configuration & Execution",
-				"toNodeId": "code:fastapi/routing.py:run_endpoint_function:279",
-				"relationshipType": "calls",
-				"description": "The get_request_handler function, central to endpoint processing, invokes run_endpoint_function to execute the actual user-defined endpoint logic after dependency resolution."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_33",
-				"fromC1": "Security & Exception Management",
-				"fromC2": "Endpoint Request and Error Processing",
-				"fromNodeId": "code:fastapi/routing.py:get_request_handler:292",
-				"toC1": "OpenAPI & Documentation Generation",
-				"toC2": "Data Serialization and Transformation",
-				"toNodeId": "code:fastapi/routing.py:serialize_response:218",
-				"relationshipType": "calls",
-				"description": "The get_request_handler function uses serialize_response to convert the raw response from an endpoint into a format suitable for the client, ensuring proper data serialization."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_34",
-				"fromC1": "Security & Exception Management",
-				"fromC2": "Endpoint Request and Error Processing",
-				"fromNodeId": "code:fastapi/routing.py:get_request_handler:292",
-				"toC1": "OpenAPI & Documentation Generation",
-				"toC2": "API Error and Exception Handling",
-				"toNodeId": "code:fastapi/utils.py:is_body_allowed_for_status_code:41",
-				"relationshipType": "calls",
-				"description": "The get_request_handler function calls is_body_allowed_for_status_code to determine if a response body should be included for a given HTTP status code, preventing unnecessary data transfer."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_35",
-				"fromC1": "OpenAPI & Documentation Generation",
-				"fromC2": "Data Serialization and Transformation",
-				"fromNodeId": "code:fastapi/routing.py:serialize_response:218",
-				"toC1": "Data Handling & Validation",
-				"toC2": "JSON Serialization Utilities",
-				"toNodeId": "code:fastapi/encoders.py:jsonable_encoder:101",
-				"relationshipType": "calls",
-				"description": "The serialize_response function leverages jsonable_encoder to convert the response content into a JSON-compatible format before sending it back to the client."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_36",
-				"fromC1": "OpenAPI & Documentation Generation",
-				"fromC2": "Data Serialization and Transformation",
-				"fromNodeId": "code:fastapi/routing.py:serialize_response:218",
-				"toC1": "Data Handling & Validation",
-				"toC2": "JSON Serialization Utilities",
-				"toNodeId": "code:fastapi/encoders.py:jsonable_encoder:101",
-				"relationshipType": "calls",
-				"description": "The serialize_response function leverages jsonable_encoder to convert the response content into a JSON-compatible format before sending it back to the client."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_4",
-				"fromC1": "Application Core & Request Lifecycle",
-				"fromC2": "Application Core and Lifecycle",
-				"fromNodeId": "code:fastapi/applications.py:FastAPI:50",
-				"toC1": "API Endpoints & HTTP Methods",
-				"toC2": "HTTP Endpoint Definitions",
-				"toNodeId": "code:fastapi/applications.py:head:3413",
-				"relationshipType": "depends on",
-				"description": "The FastAPI application core class provides the head method, which is used to define HTTP HEAD endpoints, allowing clients to retrieve response headers without the body."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_5",
-				"fromC1": "Application Core & Request Lifecycle",
-				"fromC2": "Application Core and Lifecycle",
-				"fromNodeId": "code:fastapi/applications.py:FastAPI:50",
-				"toC1": "OpenAPI & Documentation Generation",
-				"toC2": "Application Routing and Lifecycle",
-				"toNodeId": "code:fastapi/applications.py:on_event:4546",
-				"relationshipType": "depends on",
-				"description": "The FastAPI application core class includes the on_event method for registering startup and shutdown event handlers, managing the application's lifecycle, although it is deprecated."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_6",
-				"fromC1": "Application Core & Request Lifecycle",
-				"fromC2": "Application Core and Lifecycle",
-				"fromNodeId": "code:fastapi/applications.py:FastAPI:50",
-				"toC1": "API Endpoints & HTTP Methods",
-				"toC2": "API Metadata & Response Utilities",
-				"toNodeId": "code:fastapi/applications.py:openapi:1043",
-				"relationshipType": "depends on",
-				"description": "The FastAPI application core class contains the openapi method, which is responsible for generating the OpenAPI schema, essential for API documentation and client generation."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_7",
-				"fromC1": "Application Core & Request Lifecycle",
-				"fromC2": "Application Core and Lifecycle",
-				"fromNodeId": "code:fastapi/applications.py:FastAPI:50",
-				"toC1": "Security & Exception Management",
-				"toC2": "API Endpoint Configuration",
-				"toNodeId": "code:fastapi/applications.py:post:2289",
-				"relationshipType": "depends on",
-				"description": "The FastAPI application core class provides the post method, which is used to define HTTP POST endpoints, enabling the creation of new resources via the API."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_8",
-				"fromC1": "Application Core & Request Lifecycle",
-				"fromC2": "Application Core and Lifecycle",
-				"fromNodeId": "code:fastapi/applications.py:FastAPI:50",
-				"toC1": "Security & Exception Management",
-				"toC2": "API Endpoint Configuration",
-				"toNodeId": "code:fastapi/applications.py:put:1911",
-				"relationshipType": "depends on",
-				"description": "The FastAPI application core class provides the put method, which is used to define HTTP PUT endpoints, enabling the complete replacement of resources via the API."
-			},
-			{
-				"id": "cross_c1_c2_rel_process_1_1759561025059_9",
-				"fromC1": "Application Core & Request Lifecycle",
-				"fromC2": "Application Core and Lifecycle",
-				"fromNodeId": "code:fastapi/applications.py:FastAPI:50",
-				"toC1": "API Endpoints & HTTP Methods",
-				"toC2": "WebSocket Endpoint Handling",
-				"toNodeId": "code:fastapi/applications.py:websocket_route:4537",
-				"relationshipType": "depends on",
-				"description": "The FastAPI application core class includes the websocket_route method, which is used to define WebSocket endpoints, facilitating real-time bidirectional communication in the application."
-			}
-		]
-	}
+  "metadata": {
+    "fileVersion": "1.0",
+    "lumystVersion": "0.2.2",
+    "exportedAt": "2025-10-04T07:01:22.215Z",
+    "workspaceFingerprint": "d5e5d10b6e11ade5734b2102556521d37f0589721247c9a77da265383852f510",
+    "fingerprintFile": "pyproject.toml"
+  },
+  "analysisData": {
+    "graphNodes": [],
+    "graphEdges": [],
+    "c1Output": [
+      {
+        "id": "c1_category_process_1_1759561025059_1",
+        "label": "Application Core & Request Lifecycle",
+        "c1Category": "Application Core & Request Lifecycle",
+        "nodesInCategory": 36
+      },
+      {
+        "id": "c1_category_process_1_1759561025059_2",
+        "label": "API Endpoints & HTTP Methods",
+        "c1Category": "API Endpoints & HTTP Methods",
+        "nodesInCategory": 16
+      },
+      {
+        "id": "c1_category_process_1_1759561025059_3",
+        "label": "OpenAPI & Documentation Generation",
+        "c1Category": "OpenAPI & Documentation Generation",
+        "nodesInCategory": 18
+      },
+      {
+        "id": "c1_category_process_1_1759561025059_5",
+        "label": "Security & Exception Management",
+        "c1Category": "Security & Exception Management",
+        "nodesInCategory": 7
+      }
+    ],
+    "c2Subcategories": [
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_1_1",
+        "c1CategoryId": "c1_category_process_1_1759561025059_1",
+        "label": "Application Core and Lifecycle",
+        "c2Name": "Application Core and Lifecycle",
+        "description": "Encompasses the main FastAPI application class, its constructor, and the ASGI interface for handling incoming requests and managing application lifecycle events.",
+        "purpose": "To provide the foundational structure, configuration, and request processing entry point for the FastAPI application.",
+        "nodeCount": 3
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_1_2",
+        "c1CategoryId": "c1_category_process_1_1759561025059_1",
+        "label": "API Routing and Structure",
+        "c2Name": "API Routing and Structure",
+        "description": "Methods for defining HTTP and WebSocket routes, and for integrating modular API routers to build the application's endpoint structure.",
+        "purpose": "To map URL paths to specific handler functions and enable a structured, modular approach to API design.",
+        "nodeCount": 3
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_1_3",
+        "c1CategoryId": "c1_category_process_1_1759561025059_1",
+        "label": "Middleware Management",
+        "c2Name": "Middleware Management",
+        "description": "Functionality for registering and applying middleware to intercept and process requests/responses globally.",
+        "purpose": "To implement cross-cutting concerns like logging, authentication, and request/response modification.",
+        "nodeCount": 2
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_1_4",
+        "c1CategoryId": "c1_category_process_1_1759561025059_1",
+        "label": "OpenAPI Documentation System",
+        "c2Name": "OpenAPI Documentation System",
+        "description": "Components responsible for generating the OpenAPI specification (Swagger/OAS) and supporting interactive API documentation UIs.",
+        "purpose": "To automatically provide comprehensive, machine-readable, and interactive documentation for the API.",
+        "nodeCount": 3
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_1_5",
+        "c1CategoryId": "c1_category_process_1_1759561025059_1",
+        "label": "Request Parameter and Dependency System",
+        "c2Name": "Request Parameter and Dependency System",
+        "description": "A comprehensive system for defining, validating, and injecting various types of request parameters (query, path, header, cookie, body, file, form data) and managing dependencies. This includes parameter factories, their underlying classes, and OAuth2 form handling.",
+        "purpose": "To abstract and standardize the extraction, validation, and transformation of incoming request data into usable Python objects for endpoint functions, and to manage reusable dependencies.",
+        "nodeCount": 21
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_1_6",
+        "c1CategoryId": "c1_category_process_1_1759561025059_1",
+        "label": "Response and Exception Handling Utilities",
+        "c2Name": "Response and Exception Handling Utilities",
+        "description": "Provides specialized response classes for high-performance or alternative JSON serialization and the core logic for handling exceptions within the application.",
+        "purpose": "To offer flexible and optimized options for formatting and sending API responses and to gracefully manage errors.",
+        "nodeCount": 4
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_2_1",
+        "c1CategoryId": "c1_category_process_1_1759561025059_2",
+        "label": "HTTP Endpoint Definitions",
+        "c2Name": "HTTP Endpoint Definitions",
+        "description": "This subcategory encompasses the core decorators for defining HTTP GET, HEAD, and DELETE endpoints, along with the underlying generic route registration logic. It forms the public interface for standard HTTP API operations.",
+        "purpose": "To expose API functionality via standard HTTP methods and manage their registration within the application's routing system.",
+        "nodeCount": 5
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_2_2",
+        "c1CategoryId": "c1_category_process_1_1759561025059_2",
+        "label": "WebSocket Endpoint Handling",
+        "c2Name": "WebSocket Endpoint Handling",
+        "description": "This subcategory includes the decorators and internal functions specifically designed for defining and registering WebSocket communication endpoints.",
+        "purpose": "To enable real-time, bidirectional communication by providing dedicated routing capabilities for WebSocket connections.",
+        "nodeCount": 2
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_2_3",
+        "c1CategoryId": "c1_category_process_1_1759561025059_2",
+        "label": "API Parameter & Dependency Management",
+        "c2Name": "API Parameter & Dependency Management",
+        "description": "This subcategory groups classes for defining various request parameters (e.g., Query, Cookie, File) and the mechanisms for dependency injection and security, including the base 'Param' class and 'Depends'.",
+        "purpose": "To provide structured parameter validation, enable modular and testable code through dependency injection, and enforce security policies.",
+        "nodeCount": 7
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_2_4",
+        "c1CategoryId": "c1_category_process_1_1759561025059_2",
+        "label": "API Metadata & Response Utilities",
+        "c2Name": "API Metadata & Response Utilities",
+        "description": "This subcategory contains functionality for generating the OpenAPI schema (API documentation) and utility methods for rendering various types of API responses.",
+        "purpose": "To automate API documentation for external consumption and to handle the final stage of response preparation and serialization.",
+        "nodeCount": 2
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_3_1",
+        "c1CategoryId": "c1_category_process_1_1759561025059_3",
+        "label": "API Endpoint Definition",
+        "c2Name": "API Endpoint Definition",
+        "description": "Core methods for declaring HTTP and WebSocket endpoints, including their paths, response models, and OpenAPI metadata.",
+        "purpose": "To expose application functionality through well-defined API interfaces.",
+        "nodeCount": 3
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_3_2",
+        "c1CategoryId": "c1_category_process_1_1759561025059_3",
+        "label": "OpenAPI Schema Generation",
+        "c2Name": "OpenAPI Schema Generation",
+        "description": "Functions dedicated to constructing specific parts of the OpenAPI specification, such as request body schemas and security definitions.",
+        "purpose": "To programmatically build the OpenAPI documentation for the API.",
+        "nodeCount": 2
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_3_3",
+        "c1CategoryId": "c1_category_process_1_1759561025059_3",
+        "label": "Application Routing and Lifecycle",
+        "c2Name": "Application Routing and Lifecycle",
+        "description": "Manages the integration of sub-routers, registration of global exception handlers, and handling of application startup/shutdown events.",
+        "purpose": "To configure the overall routing structure and lifecycle behavior of the FastAPI application.",
+        "nodeCount": 3
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_3_4",
+        "c1CategoryId": "c1_category_process_1_1759561025059_3",
+        "label": "Data Serialization and Transformation",
+        "c2Name": "Data Serialization and Transformation",
+        "description": "Provides utilities for converting data types (e.g., Decimal to int/float) and for serializing/validating API responses according to defined models.",
+        "purpose": "To ensure data is correctly formatted and validated when exchanged with clients or processed internally.",
+        "nodeCount": 3
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_3_5",
+        "c1CategoryId": "c1_category_process_1_1759561025059_3",
+        "label": "API Error and Exception Handling",
+        "c2Name": "API Error and Exception Handling",
+        "description": "Contains logic for handling various API-specific exceptions (HTTP, WebSocket), determining appropriate response bodies, and managing error reporting.",
+        "purpose": "To provide robust and consistent error feedback to API consumers.",
+        "nodeCount": 5
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_5_1",
+        "c1CategoryId": "c1_category_process_1_1759561025059_5",
+        "label": "API Endpoint Configuration",
+        "c2Name": "API Endpoint Configuration",
+        "description": "Provides methods for developers to define and configure API endpoints, including specifying response models, status codes, and handling various response scenarios. This category sets the stage for how the API will behave and respond.",
+        "purpose": "To enable the declarative definition of web API routes and their metadata.",
+        "nodeCount": 3
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_5_2",
+        "c1CategoryId": "c1_category_process_1_1759561025059_5",
+        "label": "Core Route Registration",
+        "c2Name": "Core Route Registration",
+        "description": "Manages the internal process of registering defined API routes within the application's routing mechanism. It acts as the bridge between the high-level endpoint definitions and the underlying routing system.",
+        "purpose": "To integrate API endpoint definitions into the application's request dispatching system.",
+        "nodeCount": 1
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_5_3",
+        "c1CategoryId": "c1_category_process_1_1759561025059_5",
+        "label": "Global Exception Middleware Setup",
+        "c2Name": "Global Exception Middleware Setup",
+        "description": "Responsible for building and configuring the application's middleware stack, specifically focusing on setting up global error and exception handling mechanisms that catch unhandled exceptions and server errors.",
+        "purpose": "To ensure robust, centralized error management and consistent error responses across the entire application.",
+        "nodeCount": 1
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_5_4",
+        "c1CategoryId": "c1_category_process_1_1759561025059_5",
+        "label": "Request Handler Orchestration",
+        "c2Name": "Request Handler Orchestration",
+        "description": "Acts as a factory to create and configure the specific request handler for each API route, passing in route-specific parameters and integrating core processing logic.",
+        "purpose": "To prepare and customize the request processing pipeline for individual API endpoints.",
+        "nodeCount": 1
+      },
+      {
+        "id": "c2_subcategory_process_1_1759561025059_c1_category_process_1_1759561025059_5_5",
+        "c1CategoryId": "c1_category_process_1_1759561025059_5",
+        "label": "Endpoint Request and Error Processing",
+        "c2Name": "Endpoint Request and Error Processing",
+        "description": "Contains the core logic for processing an incoming request for a specific endpoint, including parsing request bodies, resolving dependencies, executing the endpoint function, and handling immediate, localized validation and HTTP-specific errors. This is where many exceptions related to request data or HTTP status are first identified.",
+        "purpose": "To execute the business logic of an endpoint and manage request-specific errors and responses.",
+        "nodeCount": 1
+      }
+    ],
+    "c2Relationships": [
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_1",
+        "c1CategoryId": "c1_category_process_1_1759561025059_1",
+        "fromC2": "Application Core and Lifecycle",
+        "toC2": "API Routing and Structure",
+        "relationshipType": "configures",
+        "description": "The core FastAPI application configures and manages the routing system by adding routes and including sub-routers.",
+        "nodeConnections": 3
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_2",
+        "c1CategoryId": "c1_category_process_1_1759561025059_1",
+        "fromC2": "Application Core and Lifecycle",
+        "toC2": "Middleware Management",
+        "relationshipType": "integrates",
+        "description": "The FastAPI core integrates middleware functionality, allowing global request/response processing.",
+        "nodeConnections": 2
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_3",
+        "c1CategoryId": "c1_category_process_1_1759561025059_1",
+        "fromC2": "Application Core and Lifecycle",
+        "toC2": "Response and Exception Handling Utilities",
+        "relationshipType": "delegates to",
+        "description": "The core application delegates exception handling to registered handlers.",
+        "nodeConnections": 1
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_4",
+        "c1CategoryId": "c1_category_process_1_1759561025059_1",
+        "fromC2": "Application Core and Lifecycle",
+        "toC2": "OpenAPI Documentation System",
+        "relationshipType": "generates",
+        "description": "The FastAPI application triggers the generation and serving of OpenAPI documentation.",
+        "nodeConnections": 1
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_5",
+        "c1CategoryId": "c1_category_process_1_1759561025059_1",
+        "fromC2": "API Routing and Structure",
+        "toC2": "Request Parameter and Dependency System",
+        "relationshipType": "utilizes",
+        "description": "API routes utilize the parameter and dependency system to define and validate endpoint inputs.",
+        "nodeConnections": 21
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_6",
+        "c1CategoryId": "c1_category_process_1_1759561025059_1",
+        "fromC2": "API Routing and Structure",
+        "toC2": "Response and Exception Handling Utilities",
+        "relationshipType": "produces",
+        "description": "API routes produce responses and can trigger exceptions handled by the response and exception utilities.",
+        "nodeConnections": 2
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_7",
+        "c1CategoryId": "c1_category_process_1_1759561025059_1",
+        "fromC2": "OpenAPI Documentation System",
+        "toC2": "Request Parameter and Dependency System",
+        "relationshipType": "inspects",
+        "description": "The OpenAPI documentation system inspects parameter and dependency definitions to generate API schema.",
+        "nodeConnections": 2
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_8",
+        "c1CategoryId": "c1_category_process_1_1759561025059_1",
+        "fromC2": "Request Parameter and Dependency System",
+        "toC2": "Application Core and Lifecycle",
+        "relationshipType": "integrates with",
+        "description": "Global dependencies defined in the parameter system are integrated into the application core.",
+        "nodeConnections": 2
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_1_9",
+        "c1CategoryId": "c1_category_process_1_1759561025059_1",
+        "fromC2": "Custom Response Utilities",
+        "toC2": "Application Core and Lifecycle",
+        "relationshipType": "provides to",
+        "description": "Custom response classes are provided to the application core for use as default response types.",
+        "nodeConnections": 2
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_2_1",
+        "c1CategoryId": "c1_category_process_1_1759561025059_2",
+        "fromC2": "HTTP Endpoint Definitions",
+        "toC2": "HTTP Endpoint Definitions",
+        "relationshipType": "orchestrates",
+        "description": "Specific HTTP method decorators (e.g., 'get') internally call more generic route registration methods to add the path operation to the router.",
+        "nodeConnections": 1
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_2_2",
+        "c1CategoryId": "c1_category_process_1_1759561025059_2",
+        "fromC2": "WebSocket Endpoint Handling",
+        "toC2": "WebSocket Endpoint Handling",
+        "relationshipType": "orchestrates",
+        "description": "The public 'websocket_route' decorator utilizes an internal decorator function to encapsulate the logic for adding the WebSocket route.",
+        "nodeConnections": 1
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_2_3",
+        "c1CategoryId": "c1_category_process_1_1759561025059_2",
+        "fromC2": "API Parameter & Dependency Management",
+        "toC2": "API Parameter & Dependency Management",
+        "relationshipType": "extends",
+        "description": "Specific parameter types ('Cookie', 'Query') inherit from the base 'Param' class, and the 'Security' dependency mechanism extends the base 'Depends' functionality.",
+        "nodeConnections": 4
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_2_4",
+        "c1CategoryId": "c1_category_process_1_1759561025059_2",
+        "fromC2": "HTTP Endpoint Definitions",
+        "toC2": "API Parameter & Dependency Management",
+        "relationshipType": "uses",
+        "description": "HTTP endpoint decorators are designed to accept and process parameters and dependencies defined by the API Parameter & Dependency Management components, although direct calls are not shown in these specific snippets.",
+        "nodeConnections": 0
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_2_5",
+        "c1CategoryId": "c1_category_process_1_1759561025059_2",
+        "fromC2": "HTTP Endpoint Definitions",
+        "toC2": "API Metadata & Response Utilities",
+        "relationshipType": "contributes to",
+        "description": "The definitions of HTTP endpoints provide the essential information required for generating the OpenAPI schema and implicitly rely on response rendering utilities for output formatting.",
+        "nodeConnections": 0
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_2_6",
+        "c1CategoryId": "c1_category_process_1_1759561025059_2",
+        "fromC2": "API Parameter & Dependency Management",
+        "toC2": "API Metadata & Response Utilities",
+        "relationshipType": "informs",
+        "description": "Details from parameter definitions and dependency structures are crucial for enriching the OpenAPI schema with accurate and comprehensive documentation.",
+        "nodeConnections": 0
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_3_1",
+        "c1CategoryId": "c1_category_process_1_1759561025059_3",
+        "fromC2": "API Endpoint Definition",
+        "toC2": "Application Routing and Lifecycle",
+        "relationshipType": "registers endpoints with",
+        "description": "Endpoint definition methods (delete, head, websocket_route) register their routes with the underlying routing system, which is managed by the Application Routing and Lifecycle category.",
+        "nodeConnections": 3
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_3_2",
+        "c1CategoryId": "c1_category_process_1_1759561025059_3",
+        "fromC2": "API Endpoint Definition",
+        "toC2": "OpenAPI Schema Generation",
+        "relationshipType": "contributes schema metadata to",
+        "description": "Parameters provided to endpoint decorators (e.g., response_model, tags, summary, description, openapi_extra) are directly consumed by the OpenAPI schema generation process.",
+        "nodeConnections": 2
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_3_3",
+        "c1CategoryId": "c1_category_process_1_1759561025059_3",
+        "fromC2": "API Endpoint Definition",
+        "toC2": "Data Serialization and Transformation",
+        "relationshipType": "requires response serialization from",
+        "description": "Endpoint definitions specify response_model and related serialization options, indicating that responses will be processed by data serialization functions.",
+        "nodeConnections": 2
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_3_4",
+        "c1CategoryId": "c1_category_process_1_1759561025059_3",
+        "fromC2": "Application Routing and Lifecycle",
+        "toC2": "API Error and Exception Handling",
+        "relationshipType": "registers exception handlers for",
+        "description": "The exception_handler method directly registers functions to handle exceptions, which are part of the API Error and Exception Handling category.",
+        "nodeConnections": 2
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_3_5",
+        "c1CategoryId": "c1_category_process_1_1759561025059_3",
+        "fromC2": "Data Serialization and Transformation",
+        "toC2": "OpenAPI Schema Generation",
+        "relationshipType": "provides encoding utilities to",
+        "description": "Functions like jsonable_encoder (implied by serialize_response and decimal_encoder context) are used by OpenAPI schema generation to encode examples and security definitions.",
+        "nodeConnections": 2
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_3_6",
+        "c1CategoryId": "c1_category_process_1_1759561025059_3",
+        "fromC2": "API Error and Exception Handling",
+        "toC2": "Data Serialization and Transformation",
+        "relationshipType": "serializes error responses with",
+        "description": "The http_exception_handler formats error responses, which involves serialization using utilities from the Data Serialization and Transformation category.",
+        "nodeConnections": 1
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_3_7",
+        "c1CategoryId": "c1_category_process_1_1759561025059_3",
+        "fromC2": "API Error and Exception Handling",
+        "toC2": "Application Routing and Lifecycle",
+        "relationshipType": "provides error utilities to",
+        "description": "Utility functions like is_body_allowed_for_status_code are used within exception handlers, which are registered by the routing/lifecycle system.",
+        "nodeConnections": 1
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_5_1",
+        "c1CategoryId": "c1_category_process_1_1759561025059_5",
+        "fromC2": "API Endpoint Configuration",
+        "toC2": "Core Route Registration",
+        "relationshipType": "calls",
+        "description": "High-level endpoint definition methods invoke the core router implementation to register the route.",
+        "nodeConnections": 1
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_5_2",
+        "c1CategoryId": "c1_category_process_1_1759561025059_5",
+        "fromC2": "Request Handler Orchestration",
+        "toC2": "Endpoint Request and Error Processing",
+        "relationshipType": "calls",
+        "description": "The route handler factory delegates to the core request processing function to handle the actual request logic.",
+        "nodeConnections": 1
+      },
+      {
+        "id": "c2_relationship_process_1_1759561025059_c1_category_process_1_1759561025059_5_3",
+        "c1CategoryId": "c1_category_process_1_1759561025059_5",
+        "fromC2": "Endpoint Request and Error Processing",
+        "toC2": "Global Exception Middleware Setup",
+        "relationshipType": "triggers",
+        "description": "Exceptions originating from endpoint-specific request processing are propagated and handled by the globally configured exception middleware.",
+        "nodeConnections": 1
+      }
+    ],
+    "crossC1C2Relationships": [
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_0",
+        "fromC1": "Application Core & Request Lifecycle",
+        "fromC2": "Application Core and Lifecycle",
+        "fromNodeId": "code:fastapi/applications.py:FastAPI:50",
+        "toC1": "Security & Exception Management",
+        "toC2": "Global Exception Middleware Setup",
+        "toNodeId": "code:fastapi/applications.py:build_middleware_stack:995",
+        "relationshipType": "depends on",
+        "description": "The FastAPI application core class internally contains and utilizes the build_middleware_stack method to construct the ASGI middleware stack, which is crucial for request processing and error handling."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_1",
+        "fromC1": "Application Core & Request Lifecycle",
+        "fromC2": "Application Core and Lifecycle",
+        "fromNodeId": "code:fastapi/applications.py:FastAPI:50",
+        "toC1": "OpenAPI & Documentation Generation",
+        "toC2": "API Endpoint Definition",
+        "toNodeId": "code:fastapi/applications.py:delete:2667",
+        "relationshipType": "depends on",
+        "description": "The FastAPI application core class provides the delete method, which is used to define HTTP DELETE endpoints, contributing to the API's routing and documentation generation."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_10",
+        "fromC1": "OpenAPI & Documentation Generation",
+        "fromC2": "API Endpoint Definition",
+        "fromNodeId": "code:fastapi/applications.py:delete:2667",
+        "toC1": "API Endpoints & HTTP Methods",
+        "toC2": "HTTP Endpoint Definitions",
+        "toNodeId": "code:fastapi/routing.py:delete:2582",
+        "relationshipType": "calls",
+        "description": "The delete method within the FastAPI class delegates the actual route registration for HTTP DELETE operations to the underlying router's delete method."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_11",
+        "fromC1": "OpenAPI & Documentation Generation",
+        "fromC2": "Application Routing and Lifecycle",
+        "fromNodeId": "code:fastapi/applications.py:exception_handler:4621",
+        "toC1": "Application Core & Request Lifecycle",
+        "toC2": "Response and Exception Handling Utilities",
+        "toNodeId": "code:fastapi/applications.py:decorator:4662",
+        "relationshipType": "depends on",
+        "description": "The exception_handler method in FastAPI defines a decorator function that encapsulates the logic for adding custom exception handlers to the application's core."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_12",
+        "fromC1": "API Endpoints & HTTP Methods",
+        "fromC2": "HTTP Endpoint Definitions",
+        "fromNodeId": "code:fastapi/applications.py:head:3413",
+        "toC1": "OpenAPI & Documentation Generation",
+        "toC2": "API Endpoint Definition",
+        "toNodeId": "code:fastapi/routing.py:head:3336",
+        "relationshipType": "calls",
+        "description": "The head method within the FastAPI class delegates the actual route registration for HTTP HEAD operations to the underlying router's head method."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_13",
+        "fromC1": "Application Core & Request Lifecycle",
+        "fromC2": "API Routing and Structure",
+        "fromNodeId": "code:fastapi/applications.py:include_router:1333",
+        "toC1": "OpenAPI & Documentation Generation",
+        "toC2": "Application Routing and Lifecycle",
+        "toNodeId": "code:fastapi/routing.py:include_router:1197",
+        "relationshipType": "calls",
+        "description": "The include_router method in the main FastAPI application delegates the responsibility of integrating another API router to its internal routing component."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_14",
+        "fromC1": "API Endpoints & HTTP Methods",
+        "fromC2": "API Metadata & Response Utilities",
+        "fromNodeId": "code:fastapi/applications.py:openapi:1043",
+        "toC1": "Application Core & Request Lifecycle",
+        "toC2": "OpenAPI Documentation System",
+        "toNodeId": "code:fastapi/openapi/utils.py:get_openapi:475",
+        "relationshipType": "calls",
+        "description": "The openapi method, responsible for generating the OpenAPI schema, invokes the get_openapi utility function to perform the actual schema generation logic."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_15",
+        "fromC1": "Application Core & Request Lifecycle",
+        "fromC2": "OpenAPI Documentation System",
+        "fromNodeId": "code:fastapi/applications.py:openapi:1081",
+        "toC1": "API Endpoints & HTTP Methods",
+        "toC2": "API Metadata & Response Utilities",
+        "toNodeId": "code:fastapi/applications.py:openapi:1043",
+        "relationshipType": "calls",
+        "description": "The asynchronous openapi route handler function calls the FastAPI instance's openapi method to retrieve the generated OpenAPI schema for serving."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_16",
+        "fromC1": "Data Handling & Validation",
+        "fromC2": "API Error Response Generation",
+        "fromNodeId": "code:fastapi/exception_handlers.py:request_validation_exception_handler:19",
+        "toC1": "OpenAPI & Documentation Generation",
+        "toC2": "API Error and Exception Handling",
+        "toNodeId": "code:fastapi/exceptions.py:errors:152",
+        "relationshipType": "calls",
+        "description": "The request_validation_exception_handler function retrieves detailed error messages by calling the errors method on the validation exception object to construct a JSON response."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_17",
+        "fromC1": "Data Handling & Validation",
+        "fromC2": "API Error Response Generation",
+        "fromNodeId": "code:fastapi/exception_handlers.py:websocket_request_validation_exception_handler:28",
+        "toC1": "OpenAPI & Documentation Generation",
+        "toC2": "API Error and Exception Handling",
+        "toNodeId": "code:fastapi/exceptions.py:errors:152",
+        "relationshipType": "calls",
+        "description": "The websocket_request_validation_exception_handler uses the errors method of the validation exception to provide a reason for closing the WebSocket connection due to validation failure."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_18",
+        "fromC1": "Data Handling & Validation",
+        "fromC2": "Core Validation Exceptions",
+        "fromNodeId": "code:fastapi/exceptions.py:ValidationException:148",
+        "toC1": "OpenAPI & Documentation Generation",
+        "toC2": "API Error and Exception Handling",
+        "toNodeId": "code:fastapi/exceptions.py:errors:152",
+        "relationshipType": "depends on",
+        "description": "The ValidationException class, part of data handling, contains an errors method to expose the list of validation issues, which is then used by error handling components."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_19",
+        "fromC1": "Application Core & Request Lifecycle",
+        "fromC2": "OpenAPI Documentation System",
+        "fromNodeId": "code:fastapi/openapi/utils.py:get_openapi:475",
+        "toC1": "Data Handling & Validation",
+        "toC2": "JSON Serialization Utilities",
+        "toNodeId": "code:fastapi/encoders.py:jsonable_encoder:101",
+        "relationshipType": "calls",
+        "description": "The get_openapi function, responsible for generating OpenAPI schema, utilizes jsonable_encoder to serialize various data structures into JSON-compatible formats for the schema."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_2",
+        "fromC1": "Application Core & Request Lifecycle",
+        "fromC2": "Application Core and Lifecycle",
+        "fromNodeId": "code:fastapi/applications.py:FastAPI:50",
+        "toC1": "OpenAPI & Documentation Generation",
+        "toC2": "Application Routing and Lifecycle",
+        "toNodeId": "code:fastapi/applications.py:exception_handler:4621",
+        "relationshipType": "depends on",
+        "description": "The FastAPI application core class includes the exception_handler method, allowing the application to register custom exception handling logic, which is vital for robust error management."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_20",
+        "fromC1": "OpenAPI & Documentation Generation",
+        "fromC2": "OpenAPI Schema Generation",
+        "fromNodeId": "code:fastapi/openapi/utils.py:get_openapi_operation_request_body:168",
+        "toC1": "Data Handling & Validation",
+        "toC2": "JSON Serialization Utilities",
+        "toNodeId": "code:fastapi/encoders.py:jsonable_encoder:101",
+        "relationshipType": "calls",
+        "description": "The get_openapi_operation_request_body function uses jsonable_encoder to serialize example data for request bodies into a JSON-compatible format for OpenAPI documentation."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_21",
+        "fromC1": "OpenAPI & Documentation Generation",
+        "fromC2": "OpenAPI Schema Generation",
+        "fromNodeId": "code:fastapi/openapi/utils.py:get_openapi_operation_request_body:168",
+        "toC1": "Data Handling & Validation",
+        "toC2": "JSON Serialization Utilities",
+        "toNodeId": "code:fastapi/encoders.py:jsonable_encoder:101",
+        "relationshipType": "calls",
+        "description": "The get_openapi_operation_request_body function uses jsonable_encoder to serialize example data for request bodies into a JSON-compatible format for OpenAPI documentation."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_22",
+        "fromC1": "OpenAPI & Documentation Generation",
+        "fromC2": "OpenAPI Schema Generation",
+        "fromNodeId": "code:fastapi/openapi/utils.py:get_openapi_security_definitions:76",
+        "toC1": "Data Handling & Validation",
+        "toC2": "JSON Serialization Utilities",
+        "toNodeId": "code:fastapi/encoders.py:jsonable_encoder:101",
+        "relationshipType": "calls",
+        "description": "The get_openapi_security_definitions function relies on jsonable_encoder to serialize security scheme models into a JSON-compatible format for OpenAPI security definitions."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_23",
+        "fromC1": "API Endpoints & HTTP Methods",
+        "fromC2": "API Parameter & Dependency Management",
+        "fromNodeId": "code:fastapi/params.py:Cookie:394",
+        "toC1": "Application Core & Request Lifecycle",
+        "toC2": "Request Parameter and Dependency System",
+        "toNodeId": "code:fastapi/params.py:__init__:397",
+        "relationshipType": "depends on",
+        "description": "The Cookie parameter class defines its initialization logic within its __init__ method, which configures how cookie parameters are handled in API requests."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_24",
+        "fromC1": "API Endpoints & HTTP Methods",
+        "fromC2": "API Parameter & Dependency Management",
+        "fromNodeId": "code:fastapi/params.py:Depends:763",
+        "toC1": "Application Core & Request Lifecycle",
+        "toC2": "Request Parameter and Dependency System",
+        "toNodeId": "code:fastapi/params.py:__repr__:770",
+        "relationshipType": "depends on",
+        "description": "The Depends class, used for dependency injection, includes a __repr__ method for generating a string representation, aiding in debugging and logging within the application core."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_25",
+        "fromC1": "API Endpoints & HTTP Methods",
+        "fromC2": "API Parameter & Dependency Management",
+        "fromNodeId": "code:fastapi/params.py:File:679",
+        "toC1": "Application Core & Request Lifecycle",
+        "toC2": "Request Parameter and Dependency System",
+        "toNodeId": "code:fastapi/params.py:__init__:680",
+        "relationshipType": "depends on",
+        "description": "The File parameter class defines its initialization logic within its __init__ method, which configures how file uploads are handled in API requests."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_26",
+        "fromC1": "API Endpoints & HTTP Methods",
+        "fromC2": "API Parameter & Dependency Management",
+        "fromNodeId": "code:fastapi/params.py:File:679",
+        "toC1": "Application Core & Request Lifecycle",
+        "toC2": "Request Parameter and Dependency System",
+        "toNodeId": "code:fastapi/params.py:Form:595",
+        "relationshipType": "extends",
+        "description": "The File parameter class extends the Form class, inheriting its base functionality for handling form data and specializing it for file uploads within the request parameter system."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_27",
+        "fromC1": "Application Core & Request Lifecycle",
+        "fromC2": "Request Parameter and Dependency System",
+        "fromNodeId": "code:fastapi/params.py:Header:308",
+        "toC1": "API Endpoints & HTTP Methods",
+        "toC2": "API Parameter & Dependency Management",
+        "toNodeId": "code:fastapi/params.py:Param:24",
+        "relationshipType": "extends",
+        "description": "The Header parameter class extends the Param class, inheriting core parameter definition capabilities and adding specific logic for handling HTTP header parameters."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_28",
+        "fromC1": "API Endpoints & HTTP Methods",
+        "fromC2": "API Parameter & Dependency Management",
+        "fromNodeId": "code:fastapi/params.py:Param:24",
+        "toC1": "Application Core & Request Lifecycle",
+        "toC2": "Request Parameter and Dependency System",
+        "toNodeId": "code:fastapi/params.py:__repr__:134",
+        "relationshipType": "depends on",
+        "description": "The base Param class, fundamental for API parameter management, includes a __repr__ method for debugging and clear string representation of parameter instances."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_29",
+        "fromC1": "Application Core & Request Lifecycle",
+        "fromC2": "Request Parameter and Dependency System",
+        "fromNodeId": "code:fastapi/params.py:Security:776",
+        "toC1": "API Endpoints & HTTP Methods",
+        "toC2": "API Parameter & Dependency Management",
+        "toNodeId": "code:fastapi/params.py:__init__:777",
+        "relationshipType": "depends on",
+        "description": "The Security dependency class defines its initialization logic within its __init__ method, which configures how security dependencies are managed and applied to API endpoints."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_3",
+        "fromC1": "Application Core & Request Lifecycle",
+        "fromC2": "Application Core and Lifecycle",
+        "fromNodeId": "code:fastapi/applications.py:FastAPI:50",
+        "toC1": "API Endpoints & HTTP Methods",
+        "toC2": "HTTP Endpoint Definitions",
+        "toNodeId": "code:fastapi/applications.py:get:1538",
+        "relationshipType": "depends on",
+        "description": "The FastAPI application core class exposes the get method, enabling developers to define HTTP GET endpoints, which are fundamental for retrieving resources in the API."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_30",
+        "fromC1": "Application Core & Request Lifecycle",
+        "fromC2": "Request Parameter and Dependency System",
+        "fromNodeId": "code:fastapi/params.py:Security:776",
+        "toC1": "API Endpoints & HTTP Methods",
+        "toC2": "API Parameter & Dependency Management",
+        "toNodeId": "code:fastapi/params.py:Depends:763",
+        "relationshipType": "extends",
+        "description": "The Security class extends the Depends class, building upon the core dependency injection mechanism to provide specialized functionality for handling security-related dependencies."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_31",
+        "fromC1": "Application Core & Request Lifecycle",
+        "fromC2": "Response and Exception Handling Utilities",
+        "fromNodeId": "code:fastapi/responses.py:UJSONResponse:22",
+        "toC1": "API Endpoints & HTTP Methods",
+        "toC2": "API Metadata & Response Utilities",
+        "toNodeId": "code:fastapi/responses.py:render:30",
+        "relationshipType": "depends on",
+        "description": "The UJSONResponse class, a specialized response utility, contains the render method responsible for serializing content into JSON format using the ujson library."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_32",
+        "fromC1": "Security & Exception Management",
+        "fromC2": "Endpoint Request and Error Processing",
+        "fromNodeId": "code:fastapi/routing.py:get_request_handler:292",
+        "toC1": "Data Handling & Validation",
+        "toC2": "Endpoint Configuration & Execution",
+        "toNodeId": "code:fastapi/routing.py:run_endpoint_function:279",
+        "relationshipType": "calls",
+        "description": "The get_request_handler function, central to endpoint processing, invokes run_endpoint_function to execute the actual user-defined endpoint logic after dependency resolution."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_33",
+        "fromC1": "Security & Exception Management",
+        "fromC2": "Endpoint Request and Error Processing",
+        "fromNodeId": "code:fastapi/routing.py:get_request_handler:292",
+        "toC1": "OpenAPI & Documentation Generation",
+        "toC2": "Data Serialization and Transformation",
+        "toNodeId": "code:fastapi/routing.py:serialize_response:218",
+        "relationshipType": "calls",
+        "description": "The get_request_handler function uses serialize_response to convert the raw response from an endpoint into a format suitable for the client, ensuring proper data serialization."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_34",
+        "fromC1": "Security & Exception Management",
+        "fromC2": "Endpoint Request and Error Processing",
+        "fromNodeId": "code:fastapi/routing.py:get_request_handler:292",
+        "toC1": "OpenAPI & Documentation Generation",
+        "toC2": "API Error and Exception Handling",
+        "toNodeId": "code:fastapi/utils.py:is_body_allowed_for_status_code:41",
+        "relationshipType": "calls",
+        "description": "The get_request_handler function calls is_body_allowed_for_status_code to determine if a response body should be included for a given HTTP status code, preventing unnecessary data transfer."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_35",
+        "fromC1": "OpenAPI & Documentation Generation",
+        "fromC2": "Data Serialization and Transformation",
+        "fromNodeId": "code:fastapi/routing.py:serialize_response:218",
+        "toC1": "Data Handling & Validation",
+        "toC2": "JSON Serialization Utilities",
+        "toNodeId": "code:fastapi/encoders.py:jsonable_encoder:101",
+        "relationshipType": "calls",
+        "description": "The serialize_response function leverages jsonable_encoder to convert the response content into a JSON-compatible format before sending it back to the client."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_36",
+        "fromC1": "OpenAPI & Documentation Generation",
+        "fromC2": "Data Serialization and Transformation",
+        "fromNodeId": "code:fastapi/routing.py:serialize_response:218",
+        "toC1": "Data Handling & Validation",
+        "toC2": "JSON Serialization Utilities",
+        "toNodeId": "code:fastapi/encoders.py:jsonable_encoder:101",
+        "relationshipType": "calls",
+        "description": "The serialize_response function leverages jsonable_encoder to convert the response content into a JSON-compatible format before sending it back to the client."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_4",
+        "fromC1": "Application Core & Request Lifecycle",
+        "fromC2": "Application Core and Lifecycle",
+        "fromNodeId": "code:fastapi/applications.py:FastAPI:50",
+        "toC1": "API Endpoints & HTTP Methods",
+        "toC2": "HTTP Endpoint Definitions",
+        "toNodeId": "code:fastapi/applications.py:head:3413",
+        "relationshipType": "depends on",
+        "description": "The FastAPI application core class provides the head method, which is used to define HTTP HEAD endpoints, allowing clients to retrieve response headers without the body."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_5",
+        "fromC1": "Application Core & Request Lifecycle",
+        "fromC2": "Application Core and Lifecycle",
+        "fromNodeId": "code:fastapi/applications.py:FastAPI:50",
+        "toC1": "OpenAPI & Documentation Generation",
+        "toC2": "Application Routing and Lifecycle",
+        "toNodeId": "code:fastapi/applications.py:on_event:4546",
+        "relationshipType": "depends on",
+        "description": "The FastAPI application core class includes the on_event method for registering startup and shutdown event handlers, managing the application's lifecycle, although it is deprecated."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_6",
+        "fromC1": "Application Core & Request Lifecycle",
+        "fromC2": "Application Core and Lifecycle",
+        "fromNodeId": "code:fastapi/applications.py:FastAPI:50",
+        "toC1": "API Endpoints & HTTP Methods",
+        "toC2": "API Metadata & Response Utilities",
+        "toNodeId": "code:fastapi/applications.py:openapi:1043",
+        "relationshipType": "depends on",
+        "description": "The FastAPI application core class contains the openapi method, which is responsible for generating the OpenAPI schema, essential for API documentation and client generation."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_7",
+        "fromC1": "Application Core & Request Lifecycle",
+        "fromC2": "Application Core and Lifecycle",
+        "fromNodeId": "code:fastapi/applications.py:FastAPI:50",
+        "toC1": "Security & Exception Management",
+        "toC2": "API Endpoint Configuration",
+        "toNodeId": "code:fastapi/applications.py:post:2289",
+        "relationshipType": "depends on",
+        "description": "The FastAPI application core class provides the post method, which is used to define HTTP POST endpoints, enabling the creation of new resources via the API."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_8",
+        "fromC1": "Application Core & Request Lifecycle",
+        "fromC2": "Application Core and Lifecycle",
+        "fromNodeId": "code:fastapi/applications.py:FastAPI:50",
+        "toC1": "Security & Exception Management",
+        "toC2": "API Endpoint Configuration",
+        "toNodeId": "code:fastapi/applications.py:put:1911",
+        "relationshipType": "depends on",
+        "description": "The FastAPI application core class provides the put method, which is used to define HTTP PUT endpoints, enabling the complete replacement of resources via the API."
+      },
+      {
+        "id": "cross_c1_c2_rel_process_1_1759561025059_9",
+        "fromC1": "Application Core & Request Lifecycle",
+        "fromC2": "Application Core and Lifecycle",
+        "fromNodeId": "code:fastapi/applications.py:FastAPI:50",
+        "toC1": "API Endpoints & HTTP Methods",
+        "toC2": "WebSocket Endpoint Handling",
+        "toNodeId": "code:fastapi/applications.py:websocket_route:4537",
+        "relationshipType": "depends on",
+        "description": "The FastAPI application core class includes the websocket_route method, which is used to define WebSocket endpoints, facilitating real-time bidirectional communication in the application."
+      }
+    ]
+  }
 }
