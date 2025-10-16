@@ -60,6 +60,19 @@ export class GraphFormatService {
     macroGraph.setGraph({ rankdir: "TB", nodesep: 50, ranksep: 70 });
     macroGraph.setDefaultEdgeLabel(() => ({}));
 
+    const allC2NodeIds = new Set(c2Subcategories.flatMap((c2) => c2.nodeIds));
+    const standaloneNodes = graphNodes.filter(
+      (node) => !allC2NodeIds.has(node.id),
+    );
+
+    for (const node of standaloneNodes) {
+      macroGraph.setNode(node.id, {
+        label: node.label,
+        width: NODE_WIDTH,
+        height: NODE_HEIGHT,
+      });
+    }
+
     for (const c1 of c1Outputs) {
       macroGraph.setNode(c1.id, { label: c1.label });
     }
@@ -118,7 +131,7 @@ export class GraphFormatService {
       };
     });
 
-    const positionedGraphNodes = [];
+    const positionedGraphNodes: (GraphNode & { parentNode?: string })[] = [];
     for (const c2 of positionedC2Nodes) {
       const layout = c2LayoutData.get(c2.id);
       for (const innerNode of layout.nodes) {
@@ -134,6 +147,17 @@ export class GraphFormatService {
           });
         }
       }
+    }
+
+    for (const node of standaloneNodes) {
+      const nodeWithPosition = macroGraph.node(node.id);
+      positionedGraphNodes.push({
+        ...node,
+        position: {
+          x: nodeWithPosition.x - nodeWithPosition.width / 2,
+          y: nodeWithPosition.y - nodeWithPosition.height / 2,
+        },
+      });
     }
 
     const allEdges = [
