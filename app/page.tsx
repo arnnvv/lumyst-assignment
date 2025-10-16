@@ -24,7 +24,7 @@ const {
   crossC1C2Relationships,
 } = convertDataToGraphNodesAndEdges();
 
-const layoutedData = graphFormatService.layoutCategoriesWithNodes(
+const layoutedData = graphFormatService.layoutHierarchicalGraph(
   graphNodes,
   graphEdges,
   c1Output,

@@ -2,50 +2,61 @@ import type { C1Output, C2Subcategory, GraphEdge, GraphNode } from "./types";
 
 export class ReactFlowService {
   convertDataToReactFlowDataTypes(
-    graphNodes: GraphNode[],
-    c1Nodes: C1Output[],
-    c2Nodes: C2Subcategory[],
+    graphNodes: (GraphNode & { parentNode?: string })[],
+    c1Nodes: (C1Output & { width?: number; height?: number })[],
+    c2Nodes: (C2Subcategory & { width?: number; height?: number })[],
     edges: GraphEdge[],
   ) {
     const reactFlowNodes = [
-      // Regular graph nodes
+      // C1 category nodes (top-level groups)
+      ...c1Nodes.map((node) => ({
+        id: node.id,
+        position: node.position || { x: 0, y: 0 },
+        data: { label: node.label },
+        type: "group",
+        style: {
+          backgroundColor: "rgba(239, 68, 68, 0.05)",
+          border: "2px solid #ef4444",
+          borderRadius: "12px",
+          width: node.width,
+          height: node.height,
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          padding: 10,
+          fontWeight: "bold",
+        },
+      })),
+      // C2 subcategory nodes (nested groups)
+      ...c2Nodes.map((node) => ({
+        id: node.id,
+        position: node.position || { x: 0, y: 0 },
+        data: { label: node.label },
+        type: "group",
+        parentNode: node.c1CategoryId,
+        extent: "parent" as const,
+        style: {
+          backgroundColor: "rgba(34, 197, 94, 0.05)",
+          border: "2px solid #22c55e",
+          borderRadius: "10px",
+          width: node.width,
+          height: node.height,
+        },
+      })),
+      // Regular graph nodes (children)
       ...graphNodes.map((node) => ({
         id: node.id,
         position: node.position || { x: 0, y: 0 },
         data: { label: node.label },
         type: "default",
+        parentNode: node.parentNode,
+        extent: "parent" as const,
         style: {
-          background: "#dbeafe",
-          border: "2px solid #3b82f6",
-          color: "#1e40af",
+          background: "#e0f2fe",
+          border: "1px solid #0ea5e9",
+          color: "#0369a1",
           borderRadius: "6px",
-        },
-      })),
-      // C1 category nodes
-      ...c1Nodes.map((node) => ({
-        id: node.id,
-        position: node.position || { x: 0, y: 0 },
-        data: { label: node.label },
-        type: "default",
-        style: {
-          background: "#fef2f2",
-          border: "3px solid #dc2626",
-          color: "#991b1b",
-          fontWeight: "bold",
-          borderRadius: "6px",
-        },
-      })),
-      // C2 subcategory nodes
-      ...c2Nodes.map((node) => ({
-        id: node.id,
-        position: node.position || { x: 0, y: 0 },
-        data: { label: node.label },
-        type: "default",
-        style: {
-          background: "#f0fdf4",
-          border: "2px solid #16a34a",
-          color: "#166534",
-          borderRadius: "6px",
+          width: 150,
+          height: 40,
         },
       })),
     ];
@@ -55,15 +66,13 @@ export class ReactFlowService {
       source: edge.source,
       target: edge.target,
       label: edge.label,
-      style:
-        edge.label === "contains"
-          ? { stroke: "#9ca3af", strokeDasharray: "5,5", strokeWidth: 1 } // Dashed light gray for containment
-          : edge.id.startsWith("c2_relationship")
-            ? { stroke: "#059669", strokeWidth: 2 } // Dark green for C2-C2 relationships
-            : edge.id.startsWith("cross_c1_c2_rel")
-              ? { stroke: "#d97706", strokeWidth: 2 } // Dark orange for cross C1-C2 relationships
-              : { stroke: "#374151", strokeWidth: 1 }, // Dark gray for other edges
-      labelStyle: { fill: "#000", fontWeight: "500" },
+      style: edge.id.startsWith("c2_relationship")
+        ? { stroke: "#059669", strokeWidth: 2 }
+        : edge.id.startsWith("cross_c1_c2_rel")
+          ? { stroke: "#d97706", strokeWidth: 2 }
+          : { stroke: "#4b5563", strokeWidth: 1.5 },
+      labelStyle: { fill: "#1f2937", fontWeight: "500" },
+      animated: edge.label === "calls",
     }));
 
     return {
