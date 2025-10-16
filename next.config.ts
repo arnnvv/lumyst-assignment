@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    reactCompiler: {
+      panicThreshold: "ALL_ERRORS",
+    },
+  },
 };
 
 export default nextConfig;

@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "d": "next dev --turbopack",
-    "b": "next build --turbopack",
+    "d": "next dev",
+    "b": "next build",
     "p": "next start",
     "l": "eslint",
     "f": "biome format --write",
@@ -30,6 +30,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
     "tailwindcss": "^4",
